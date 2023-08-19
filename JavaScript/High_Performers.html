@@ -1,0 +1,59 @@
+<!-- 
+    High Performers
+easy
+Problem Statement
+You are given an array of objects representing a group of students, each with a name and an array of test scores. Your task is to use map, filter, and reduce to calculate the average test score for each student, and then return an array of objects containing only the students who have an average score above 90.
+
+The array of objects that you will return should have the keys "name" and "average" which should contain the name and the average marks of the student if his average marks is greater than 90.
+Input
+The highPerformers function takes an array of objects as an argument.
+You can give input in the following format in a single line.
+
+[{ name: "Ram", scores: [80, 95, 60] },{ name: "Mohan", scores: [85, 70, 90] },{ name: "Sai", scores: [60, 70, 80] },{ name: "Hemang", scores: [95, 90, 94] },];
+
+It will be automatically parsed as an object internally.
+Output
+Return an array of objects containing only students with an average score above 90. The objects in the array should have the keys "name" and "average" which should contain the name and the average marks of the student if his average score is greater than 90.
+
+eg for, const students = [
+{ name: "Ram", scores: [80, 95, 60] },
+{ name: "Mohan", scores: [85, 70, 90] },
+{ name: "Sai", scores: [60, 70, 80] },
+{ name: "Hemang", scores: [95, 90, 94] },
+];
+
+we will return an array of objects,
+[ { name: 'Hemang', average: 93 } ].
+The hidden code will print
+true //this means if you have used reduce, map, filter
+nameofthestudent
+averageofthestudent
+Example
+Sample Input
+[{ name: "Ram", scores: [80, 95, 60] },{ name: "Mohan", scores: [85, 70, 90] },{ name: "Sai", scores: [60, 70, 80] },{ name: "Hemang", scores: [95, 90, 94] },];
+Sample Output
+true
+Hemang
+3
+ -->
+<!-- ............................................................................................................ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function highPerformers(students) {
+                return students.map(student =>({
+                name: student.name,
+                average: student.scores.reduce((acc, score) => acc + score, 0) / student.scores.length
+            }))
+            .filter(student => student.average > 90);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!-- 
+    JS Dynamic Function Input
+easy
+Problem Statement
+Modify the takeMultipleNumbersAndAdd such that it can take any number of arguments
+and return its sum.
+
+This is JS only question.
+Input
+Function should be able to take any number of args
+Output
+Sum of the numbers
+Example
+takeMultipleNumbersAndAdd(1, 2, 2) should return 5 because 1 + 2 + 2
+
+takeMultipleNumbersAndAdd(-1, 2, -1, 5) should return 5
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Pre Code    
+        function takeMultipleNumbersAndAdd (...numbers){
+            // the JavaScript rest parameter syntax
+            let sum=0;
+            for(let i=0;i<numbers.length;i++){
+                sum += numbers[i];
+            }
+            return sum;
+
+        }
+        console.log(takeMultipleNumbersAndAdd(100, 200, 300));
+        console.log(takeMultipleNumbersAndAdd(1, 3, 5, 7, 9, 4));
+        console.log(takeMultipleNumbersAndAdd(5, 5));
+
+    </script>
+</body>
+</html>

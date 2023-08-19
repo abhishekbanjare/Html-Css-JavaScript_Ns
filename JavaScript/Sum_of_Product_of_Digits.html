@@ -1,0 +1,66 @@
+<!-- Sum of Product of Digits of a given number
+easy
+Problem Statement
+You are given two numbers n1 and n2. You need to find the sum of the products of their corresponding digits. So, for a number n1= 6 and n2 = 34, you'll do (6*4)+(0*3) = 24.
+Input
+User Task:
+Since this will be a functional problem, you don't have to take input. You just have to complete the function sumOfProductOfDigits() that takes the integers n1 and n2 as a parameter.
+
+To custom test the function, provide input in the following manner:
+1st line will contain the number of test cases, let's say t
+Then there will be t lines, each line having two numbers n1 and n2, separated by space
+
+Constraints:
+1 <= T <= 100
+0 <= n1, n2 <= 10^6
+Output
+Return the sum of product of corresponding digits of n1 and n2.
+Example
+Sample Input:
+2
+9 0
+35 6798
+
+Sample Output:
+0
+67
+
+Explanation:-
+For test 2:-
+(8*5) + (9*3) + (7*0) + (6*0) = 67 -->
+
+<!-- .....................................................................................................................
+..................................................................................................................... -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           function sumOfProductOfDigits(n1, n2)
+           {
+         // convert the number of string
+                const strn1 = n1.toString();
+                const strn2 = n2.toString();
+                let sum = 0; //initialize
+                
+                for(let i=0; i<strn1.length; i++){
+                    let n2Digits = 0;
+                    if(i < strn2.length){
+                        n2Digits = parseInt(strn2.charAt(strn2.length - i - 1));
+
+                        sum += parseInt(strn1.charAt(strn1.length - i - 1))*n2Digits;
+                    }
+                
+                }
+                return sum;
+            }
+            let result = sumOfProductOfDigits(35,6798);
+            console.log(result);
+    </script>
+</body>
+</html>

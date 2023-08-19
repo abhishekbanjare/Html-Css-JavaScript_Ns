@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="style.css">  -->
+    <style>
+
+    </style>
+    <title>Search Cards</title>
+    <style>
+       /* Css Reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#333;
+}
+/* Navigation bar styles */
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    background-color:#333;
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 99vw;
+    z-index: 999;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 4px 4px 0 rgba(25, 231, 231, 0.2);
+}
+.logo a{
+     color: #fff;
+     font-size: 1.5rem;
+     text-decoration: none;
+}
+.nav-links{
+    display: flex;
+    align-items: center;
+    list-style:none;
+    float: right;
+    margin-right: 2rem;
+}
+.nav-links li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem;
+}
+.nav-links li a:hover{
+    transform: translate(10px);
+    color: rgb(0, 191, 255);
+}
+.burger{
+    display:none;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+@media screen and (max-width: 768px){
+    .nav-links{
+        display:none;
+    }
+    .burger{
+        display:block;
+        cursor: pointer;
+    }
+}
+/* Search section............... */
+.search{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201023/pngtree-a-logo-type-pink-neon-background-night-light-advertising-image_432679.jpg");
+    background-size:contain;
+    background-position: center;
+    background-repeat: repeat;
+    /* background-repeat:no-repeat; */
+    /* opacity: 50px; */
+}
+.search-container{
+    background-color:rgba(69, 70, 69, 0.9);
+    padding: 2rem;
+    padding-left:3rem;
+    padding-right:3rem;
+    text-align:center;
+    border-radius: 8px;
+    color: rgb(255, 255, 255);
+}
+.search-container h1{
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+.search-container input[type='text']{
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border:none;
+    margin-bottom: 1rem;
+    width: 60%;
+}
+.search-container button{
+    padding: 0.5rem 0.6rem;
+    font-size:1.2rem;
+    background-color: #211e1e;
+    color: #ffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Card section styles............ */
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 5rem;
+    color:wheat;
+}
+.card{
+    width:30%;
+    margin: 1rem;
+    box-shadow: 0px 0px 10px #45b2d3e5;
+    transition: all 0.3s ease-in-out;
+}
+.card:hover{
+    transform: translateY(-10px);
+}
+.card img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card-content{
+    padding: 1rem;
+}
+.card-content h2{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+.card-content p{
+    font-size: 1rem;
+    line-height: 1.5;
+}
+.card-btn{
+    float: right;
+}
+.button-61{
+    align-items: center;
+    appearance: none;
+    border-radius: 4px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 3px 1px -2px, rgba(0, 0, 0, .14) 0 2px 2px 0, rgba(0, 0, 0, .12) 0 1px 5px 0;
+    box-sizing: border-box;
+    color: #fff;
+    background-color:#333;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: Roboto, sans-serif;
+    font-size: .875rem;
+    font-weight: 500;
+    height: 36px;
+    justify-content:center;
+    letter-spacing: .0892857em;
+    line-height: normal;
+    min-width: 40px;
+    outline: none;
+    overflow: visible;
+    padding: 0 16px;
+    position: relative;
+    text-align:center;
+    text-decoration: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    will-change: transform, opacity;
+}
+.button-61:hover{
+    box-shadow: #0f1111e8 1px 2px 6px -4px, #04040ce8 1px 2px 4px -1px, #020c0ed8 1px 2px 4px 0;
+}
+/* ................... */
+.button-61:disabled{
+    background-color:rgba(150, 15, 15, 0.884);
+    box-shadow: rgba(7, 33, 117, 0.2) 0 0 0 0, rgba(170, 234, 245, 0.938) 0 0 0 0 , rgba(226, 78, 9, 0.918) 0 0 0 0;
+    color: rgba(0, 0, 0, .37);
+    cursor: default;
+    pointer-events: none;
+}
+.button-61:not(:disabled){
+    background-color:#332a2a;
+}
+/* ...................... */
+.button-61:focus{
+    box-shadow: rgba(0, 0, 0, .2) 0 2px 4px -1px, rgba(0, 0, 0, .14) 0 4px 5px 0, rgba(0, 0, 0, .12) 0 1px 10px 0;
+}
+.button-61:active{
+    box-shadow: rgba(0, 0, 0, .2) 0 5px 5px -3px, rgba(0, 0, 0, .14) 0 8px 10px 1px, rgba(0, 0, 0, .12) 0 3px 14px 2px;
+    background-color: #e9c09f;
+}
+/* footer ............... */
+footer{
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <!-- Nav Bar........ -->
+    <nav>
+        <div class="logo">
+            <a href="#">Search the Cards </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <!-- <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li> -->
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>       
+    </nav>
+    
+    <!-- Search section........ -->
+          <section class="search">
+            <div class="search-container">
+                <h1>Do you have a query?</h1>
+                <input type="text" placeholder="Type here..." />
+                <button type="submit">Submit<i class="fa fa-search"></i>&nbsp;</button>
+            </div>
+        </section>
+
+          <!-- Card section -->
+    <section class="cards">
+        <div class="card">
+            <img src="https://images.pexels.com/photos/712786/pexels-photo-712786.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 1</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/920381/pexels-photo-920381.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3862634/pexels-photo-3862634.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+            <div class="card-content">
+                <h2>Card 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2708981/pexels-photo-2708981.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 4</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <button class="button-61" role ="button">Read more</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/3862632/pexels-photo-3862632.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 5</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/355904/pexels-photo-355904.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 6</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/879109/pexels-photo-879109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 7</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/1181317/pexels-photo-1181317.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 8</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://www.shutterstock.com/shutterstock/photos/1955634814/display_1500/stock-photo-web-development-and-coding-concept-web-banner-with-copy-space-on-purple-background-flat-lay-1955634814.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 9</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://arka-live.s3.us-east-2.amazonaws.com/uploads/2021/01/header_banner-6.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 10</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdni.iconscout.com/illustration/premium/preview/woman-working-on-laptop-4909719-4089188.png?f=webp&h=700"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 11</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/613241758/photo/young-woman-working-on-a-laptop.jpg?s=612x612&w=0&k=20&c=B3WbJ7VFEr77G0T698I0WMkM5LOV-pMrLCljEEJGh-o="
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 12</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/premium-photo/shot-woman-surfing-net-laptop-morning-home_360066-23200.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 13</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://media.istockphoto.com/id/1321462048/photo/digital-transformation-concept-system-engineering-binary-code-programming.jpg?s=612x612&w=0&k=20&c=Ib8RLw3_eCOo9N3YE4pvp9rcb_WmirjS-9x9R-vTd68="
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 14</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/free-photo/medium-shot-man-wearing-vr-glasses_23-2149126949.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 15</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://edsurge.imgix.net/uploads/post/image/12917/DevTech_Research_Group_Family_Coding_Day_EdSurge-1576078551.jpg?auto=compress%2Cformat&w=640&h=259&fit=crop"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 16</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn.suzukimotorcycle.co.in/public-live/uploads/media-images/original/Hayabusa_Banner_1920x965px_(2)_642c1c35c3fdd.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 17</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/210143/pexels-photo-210143.jpeg?cs=srgb&dl=pexels-pixabay-210143.jpg&fm=jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 18</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://img.freepik.com/free-photo/modern-sports-car-speeds-through-dark-curve-generative-ai_188544-9136.jpg"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 19</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 20</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/2365572/pexels-photo-2365572.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 21</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/274974/pexels-photo-274974.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 21</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.pexels.com/photos/575386/pexels-photo-575386.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="Kuch to gadbadh he dayaa" />
+            <div class="card-content">
+                <h2>Card 21</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+                    porttitor ultrices est, vel viverra turpis consequat vel. Donec
+                    dignissim metus nec massa ultrices consequat.
+                </p>
+            </div>
+            <div class="card-btn">
+                <!-- <button class="button-8" role="button">Read more</button> -->
+                <button class="button-61" role="button">Read more</button>
+
+            </div>
+        </div>
+
+    </section>
+     <!-- Footer -->
+    <footer>
+        <h5>Footer</h5>
+        <p>© 2023 Search the Cards. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>

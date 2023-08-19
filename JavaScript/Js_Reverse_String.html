@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// Pre Code    
+// Complete the reverseString function 
+function reverseString(n) {
+    // //Write Code Here
+    // let reversed = '';
+    // for(let i = n.length-1; i >= 0; i--){
+    //     reversed += n[i];
+    // }
+    // return reversed;
+
+
+
+// Using the split() and join() Methods:.............................
+    // return n.split('').reverse().join('');
+
+
+
+// Using the ES6 reduce() Function:.................................
+   return n.split('').reduce((reversed, char) => char + reversed, '');
+
+}
+</script>
+  
+</body>
+</html>

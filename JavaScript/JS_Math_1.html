@@ -1,0 +1,53 @@
+<!-- 
+    JS Math - 1
+easy
+Time Limit: 2 sec
+Memory Limit: 128000 kB
+Problem Statement
+Implement the function round, which should take a number which can be a float(decimal)
+and return its result as an integer rounded of (Use JS In built functions)
+Input
+Function will take a float as input (can be negative or positive)
+Output
+Function will return a rounded off number
+Example
+console. log(round(1.112)) // prints 1
+
+console. log(round(1.9)) // prints 2
+
+console. log(round(-0.66)) // prints -1
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function round(num){
+    // 1. Math.round(): This function rounds a number to the nearest integer................
+      return Math.round(num);
+
+
+    // //...............................................................................................
+    //   //2. Math.floor(): This function rounds a number down to the nearest integer (toward negative infinity).
+    //   const floorValue = Math.floor(3.7); // 3
+
+    //   //3. Math.ceil(): This function rounds a number up to the nearest integer (toward positive infinity).
+    //   const ceilValue = Math.ceil(3.2); // 4
+
+    //  //4 Math.trunc(): This function truncates the decimal part of a number (removes everything after the decimal point without rounding).
+    //  const truncatedValue = Math.trunc(3.7); // 3
+
+    //  //5 Negative Numbers: These functions work with negative numbers as well.
+    //  const negativeValue = Math.round(-3.7); // -4
+    //  const negativeFloor = Math.floor(-3.7); // -4
+    //  const negativeCeil = Math.ceil(-3.2);  // -3
+    //  const negativeTrunc = Math.trunc(-3.7); // -3
+}
+    </script>
+</body>
+</html>

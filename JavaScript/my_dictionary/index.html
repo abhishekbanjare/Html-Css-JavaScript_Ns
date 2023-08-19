@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <title>My Dictionary App</title>
+</head>
+
+<body>
+  <header>
+    <img src="dictionary.png" alt="" width="100" height="auto">
+    <h1>My DICTIONARY App</h1>
+    <button id="historyBtn"><b>HISTORY</b></button>
+  </header>
+  <main>
+    <div id="searchPage">
+      <input type="text" id="searchInput" placeholder="Enter a word">
+      <button id="searchBtn">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+
+    <div id="historyPage">
+      <div id="historyPage-header">
+        <img src="dictionary.png" alt="" width="100" height="auto">
+        <h1>My DICTIONARY App History</h2>
+        <button id="searchPageBtn"><b>SEARCH</b></button>
+      </div>
+      <div id="historyContainer"></div>
+  </div>
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
