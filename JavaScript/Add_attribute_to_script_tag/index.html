@@ -1,0 +1,41 @@
+<!-- 
+    You are given the HTML and JS boilerplate. You have three JavaScript files: "dom.js", "footer.js", and "utils.js".
+
+
+"dom.js" contains code for manipulating the DOM, "footer.js" contains code for adding a footer to the page, and "utils.js" contains a JavaScript function.
+
+Your task is to include these JavaScript files in the HTML document using the async and defer attributes. You decide to place the <script> for all three files in the head tag.
+
+The "dom.js" and "footer.js" files may have dependencies on each other, so it's important to ensure that they are executed in the correct order. Use the correct attribute for both of these <script> such that it ensures that they are executed in the order they appear in the HTML file, avoiding any issues with dependencies.
+
+However, "utils.js" is less likely to have dependencies on the other <script>, it can be loaded asynchronously.
+
+
+
+Add the correct attribute to each <script> to optimize page loading and avoid issues with dependencies.
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>Document</title>
+    <script src="dom.js" defer></script>
+    <script src="footer.js" defer ></script>
+    <script src="utils.js" async></script>
+</head>
+<body>
+     
+    <h1>Async and Defer Example</h1>
+    <p>Three JavaScript files will be loaded using the async and defer attributes, respectively.</p>
+
+    <div id="content">
+        <p>This is some content.</p>
+    </div>
+    
+    <footer id="footer">
+        <p>&copy; Example.com</p>
+    </footer>
+</body>
+</html>
