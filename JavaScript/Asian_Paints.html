@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asian Paints</title>
+    <style>
+        .block {
+          height: 50px;
+          width: 50px;
+          margin: 5px;
+          border: 1px solid black;
+        }
+        .blocks-wall{
+          display:grid;
+          grid-template-columns:repeat(4, 70px);
+        }
+    </style>
+</head>
+<body>
+    <!-- html code goes here -->
+<input type="number" id="wall_id" name="input1" placeholder="Enter wall id">
+<input type="text" id="wall_color" name="input2" placeholder="Enter wall color">
+
+<button id="apply-btn">Apply</button>
+<button id="reset-btn">Reset All</button>
+
+<section class="blocks-wall">
+    <div class="block" id="1" value="1">1</div>
+    <div class="block" id="2" value="2">2</div>
+    <div class="block" id="3" value="3">3</div>
+    <div class="block" id="4" value="4">4</div>
+    <div class="block" id="5" value="5">5</div>
+    <div class="block" id="6" value="6">6</div>
+    <div class="block" id="7" value="7">7</div>
+    <div class="block" id="8" value="8">8</div>
+    <div class="block" id="9" value="9">9</div>
+    <div class="block" id="10" value="10">10</div>
+</section>
+
+<!-- .......................................................... -->
+<script>
+        const applyButton = document.getElementById("apply-btn");
+        const resetButton = document.getElementById("reset-btn");
+
+        applyButton.addEventListener('click',applyColors);
+        resetButton.addEventListener('click',resetColors);
+
+        function applyColors(){
+            const wallId = document.getElementById('wall_id').value;
+            const wallColor = document.getElementById('wall_color').value;
+
+            const targetBlock = document.getElementById(wallId);
+            if(targetBlock){
+                targetBlock.style.backgroundColor = wallColor;
+            }
+        }
+
+        function resetColors(){
+            // alert("This is an alert message!");
+            const blocks = document.querySelectorAll('.block');
+
+            blocks.forEach(block => {
+                block.style.backgroundColor = 'transparent';
+            });
+        }
+</script>
+</body>
+</html>
+<!-- .................................................................................................... -->
+<!-- 
+    Asian Paints
+Asian Paints wants the users to be able to preview and compare how different colors will look on their walls. They also decided that limiting it to 10 walls is the best bet not to confuse the users and still give them ample colors and shades to compare.
+
+You are a developer at Asian Paints and have decided to build a feature for this.
+
+You designed the feature in such a way that users will be able to see 10 walls on their screen. There will be 2 input boxes and 2 buttons.
+
+Each wall will have an id associated with it. The first input box will take the id of the wall. The second input box will take the color from the users. The Apply button will apply the color to the wall with the same id in the input field. The Reset button will reset the color of the walls to transparent.
+
+Acceptance Criteria:
+Create 10 walls, 2 input fields, and 2 buttons.
+
+Each block should have a unique id corresponding to it in 1-10 and the same value. For example, the first wall will have <div id="1" value="1"></div>. Give every block a class of "block" as well. These 10 blocks should reside in a section with class "blocks-wall", and give this section, with class "blocks-wall", a grid display, with grid-template-columns repeating 4 times with 70px of width.
+
+The first input box that accepts the id of the wall should have id="wall_id" and should be of type "number".
+
+The first input box that accepts the color of the wall should have id="wall_color" and should be of type "text".
+
+The Apply button should have id="apply-btn".
+
+The Reset button should have id="reset-btn".
+
+If Apply button is pressed, take the color from the input#wall_color and the wall from the input#wall_id and set the color as the background color of the wall. The background color for all other walls should turn transparent.
+
+On entering the new color in the input#wall_color and the wall in the input#wall_id, set the color as the background color of that block, and persist the color and the block of the previous color input and block.
+
+If the Reset button is pressed, the background color for all the blocks should turn transparent.
+ -->

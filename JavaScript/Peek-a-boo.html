@@ -8,15 +8,24 @@
 <body>
     <h1>I am a headline made with HTML</h1>
     <br />
-    <p id="useless-paragraph">Useless paragraph.......... Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, rerum!</p>
+    <p id="useless-paragraph">Useless paragraph.......... 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, rerum!</p>
     <br />
     <button onclick="toggleVisibility()">Toggle Button</button>
 </body>
-<script>
+<!-- <script>
     // your js code goes here
     function toggleVisibility(){
             const paragraph = document.getElementById("useless-paragraph");
             paragraph.style.display = (paragraph.style.display === "none" || paragraph.style.display === "") ? "block" : "none";
+    }
+</script> -->
+
+<script>
+    // your js code goes here
+    function toggleVisibility(){
+            const paragraph = document.getElementById("useless-paragraph");
+            paragraph.style.display = (paragraph.style.display === "none") ? "block" : "none";
     }
 </script>
 </html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic css frontend</title>
+    <style>
+        .text-here {
+            font-size: 55px;
+            font-family: sans-serif;
+            color: black;
+            text-decoration: none;
+            font-style: normal;
+            font-weight: normal;
+            line-height: normal;
+            text-align: left;
+            letter-spacing: normal;
+            word-spacing: normal;
+        }
+    </style>
+</head>
+<body>
+    <!-- html code goes here -->
+        <div class="text-here" id="text-container">This is some example text</div>
+
+        <label for="changeColor">Change Text Color:</label>
+        <input type="text" id="colorbox">
+        <button id="colorchange">Change Color</button><br>
+
+        <label for="range">Change Font Size:</label>
+        <input type = "range" id="fontsize" min="10" max="100" value="55"><br>
+
+        <button id="underline" class="stylebt">Underline</button>
+        <button id="italic" class="stylebt">Italic</button>
+        <button id="bold" class="stylebt">Bold</button><br>
+
+        <label for="dropdown">Change Font Family:</label>
+        <select id="list"> 
+            <option value="serif">Serif</option>
+            <option value="sans-serif">Sans-Serif</option>
+            <option value="monospace">Monospace</option>
+            <option value="cursive">Cursive</option>
+            <option value="fantasy">Fantasy</option>
+        </select><br>
+
+        <button id="getstyle">Get CSS Properties</button>
+        <p id="css-props"></p>
+
+    <!-- .................................................................................. -->
+<script>
+        const textContainer = document.getElementById("text-container");
+        const colorBox = document.getElementById("colorbox");
+        const colorChangeButton = document.getElementById("colorchange");
+        const fontSizeInput = document.getElementById("fontsize");
+        const underlineButton = document.getElementById("underline");
+        const italicButton = document.getElementById("italic");
+        const boldButton = document.getElementById("bold");
+        const fontList = document.getElementById("list");
+        const getStyleButton = document.getElementById("getstyle");
+        const cssPropsParagraph = document.getElementById("css-props");
+
+        colorChangeButton.addEventListener("click",()=>{
+            const newColor = colorBox.value;
+            textContainer.style.color = newColor;
+        });
+
+        fontSizeInput.addEventListener("input",()=>{
+            const newSize = fontSizeInput.value + "px";
+            textContainer.style.fontSize = newSize;
+        });
+
+        underlineButton.addEventListener("click",() =>{
+            textContainer.style.textDecoration = "underline";
+        });
+
+        italicButton.addEventListener("click",() =>{
+            textContainer.style.fontStyle = "italic";
+        });
+
+        boldButton.addEventListener("click",()=>{
+            textContainer.style.fontWeight = "bold";
+        });
+
+        fontList.addEventListener("input",()=>{
+                 const newFontFamily = fontList.value;
+                 textContainer.style.fontFamily = newFontFamily;
+        });
+
+        // getComputedStyle() ek in-build method hota hai javaScript ka, jo kisi element me applied sare ke sare properties ko kisi dusre variable me object ke rup me return kara deta hai
+        getStyleButton.addEventListener("click",()=>{
+           
+            const computedStyle = getComputedStyle(textContainer);
+            let cssProperties = "";
+            
+            cssProperties += `color: ${computedStyle.color}; `;
+            cssProperties += `font-size: ${computedStyle.fontSize}; `;
+            cssProperties += `text-decoration: ${computedStyle.textDecoration}; `;
+            cssProperties += `font-style: ${computedStyle.fontStyle}; `;
+            cssProperties += `font-weight: ${computedStyle.fontWeight}; `;
+            cssProperties += `font-family: ${computedStyle.fontFamily}; `;
+
+            cssPropsParagraph.textContent = cssProperties;
+
+// ......................................................................................
+// const cssProperties = [
+//                 `color: ${computedStyle.color}`,
+//                 `font-size: ${computedStyle.fontSize}`,
+//                 `font-family: ${computedStyle.fontFamily}`,
+//                 `text-decoration: ${computedStyle.textDecorationLine}`,
+//                 `font-style: ${computedStyle.fontStyle}`,
+//                 `font-weight: ${computedStyle.fontWeight}`
+//             ];
+
+//             cssPropsParagraph.textContent = cssProperties.join(", ");
+            
+        });
+</script>
+</body>
+</html>

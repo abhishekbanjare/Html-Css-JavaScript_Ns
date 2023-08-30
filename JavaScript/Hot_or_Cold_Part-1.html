@@ -1,0 +1,75 @@
+<!-- Random Number -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number</title>
+</head>
+<body>
+
+    <p id="main">I am learning to generate random number. I will be able to handle randomness in any of my 
+          application that needs it. Press the button to get a random number.</p>
+    <button id="btn" onclick="displayRandomNumber()">Click Me!!</button>
+    <!-- <button id="btn">Click Me!!</button> -->
+    <p id="num"></p>
+<!-- .............................................................................................. -->
+
+    <script>
+           // javascript code goes here
+        function displayRandomNumber(){
+            let numberElement = document.getElementById("num");
+            let randomNumber = Math.floor(Math.random() * 41) - 20;
+            numberElement.textContent = "Random Number: "+ randomNumber;
+            
+        }
+    </script>
+
+<!-- ................................................................................................... -->
+    <!-- <script>
+        function displayRandomNumber() {
+            // generate decimal number upto 100, if we want to change range so we can change
+            var randomNumber = Math.floor(Math.random() * 100) + 1; 
+
+            // var randomNumber = Math.random() * 200 + 1; //generate floting number upto 100
+            // var randomNumber = Math.random() * 500 + 1; //generate floting number upto 500
+
+            var numElement = document.getElementById("num");
+            numElement.textContent = "Random number: " + randomNumber;
+        }
+    </script> -->
+
+<!-- .................................................................................................. -->
+
+<!-- Here we use addEvetListener()-->
+ <!-- <script>
+    document.getElementById("btn").addEventListener("click", function() {
+            var randomNumber = Math.floor(Math.random() * 41) - 20; // Generates a number between -20 and 20
+            var numElement = document.getElementById("num");
+            numElement.textContent = "Random number: " + randomNumber;
+        });
+ </script> -->
+</body>
+</html>
+
+
+<!--...........................................................................................  -->
+<!-- ........................................................................................... -->
+<!-- Hot or Cold: Part-1
+You are building the game Hot or Cold. In this game, the computer generates a random number and the user guesses the number. If the guess is close to the number, the computer replies with "Hot" and if the guess is far from the generated number, the computer replies with "Cold".
+
+Part 1
+In this part of the game, the program would generate a random number every time we click a button and display that number. So let's learn to do that.
+
+You can use Math.random() for the generation of Random numbers.
+
+
+Make a p tag with id="main" and content I am learning to generate random number. I will be able to handle randomness in any of my applications that needs it. Press the button to get a random number.
+
+Make a button with id="btn" which on click renders a random whole number each time between -20 & 20.
+
+Make a p tag with id="num" where the random number is rendered. Initially, the p tag should contain an empty string.
+
+
+
+Note: The random number generated must be between 20 and -20, and should be a whole number. If it is in decimal, make sure to round it off. -->
