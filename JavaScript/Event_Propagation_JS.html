@@ -1,0 +1,63 @@
+<!-- Event Propagation - JS Value vs reference types, Event bubbling, capturing and propagation - Post Class -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            padding: 50px;
+            background-color: rgba(49, 35, 197, 0.2);
+            text-align: left;
+            cursor: pointer;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <a id="myAnchor" href="https://www.newtonschool.co/">Go to Website</a>
+    <br>
+    <p>Click the DIV </p>
+    <div id="div2" onclick="func2()">DIV 2
+    <div id="div1" onclick="func1(event)">DIV 1</div>
+    </div>
+    Stop propagation:
+    <input type="checkbox" id="check">
+<!-- ........................................................................... -->
+<script>
+  const anchor = document.getElementById("myAnchor");
+anchor.addEventListener("click", (event)=>{
+    event.preventDefault(); //stop open link
+});
+
+function func1(event) {
+  if(document.getElementById("check").checked){
+    event.stopPropagation(); // stop bubbling
+    console.log("DIV 1 is clicked.");
+  }else{
+    console.log("DIV 1 is clicked.");
+  }
+ 
+}
+
+
+function func2() {
+  console.log("DIV 2 is clicked.");
+}
+
+    </script>
+</body>
+</html>
+
+<!-- 
+    Event Propagation
+You are given a boilerplate of HTML CSS and JS code.
+You need to perform two tasks.
+
+When we click the anchor tag it should not take us to the link which is embedded inside it.
+You have to implement this using the preventDefault() method.
+The preventDefault() method cancels the event if it is cancelable, meaning that the default action that belongs to the event will not occur.
+When we click on div with id #div1 it results in triggers an event that prints value in the console.
+As div with id #div1 is inside div with id #div2 when div with id #div1 is clicked, it automatically triggers the event of #div2.
+When the checkbox with id #check is ch\
+ecked and div with id #div1 is clicked only the event associated with that div is triggered.fc  bgy68jb ,l[p; --*+>
