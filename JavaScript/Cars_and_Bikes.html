@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cars and Bikes</title>
+</head>
+<body>
+<script>
+// You are given an object vehicle which contains some hidden members and methods.
+ const vehicle = {
+    name: "",
+    type: "",
+    wheelCount: "",
+
+    // Some more members and methods
+    // ...
+}
+
+    function makeCar(name, wheelCount) {
+        // Create a new object that inherits from the vehicle object
+        const car = Object.create(vehicle);
+
+        // Add properties to the new car objec
+        car.name = name;
+        car.wheelCount = wheelCount;
+        car.type = "Car";
+
+        return car;
+    }
+
+    function makeBike(name, wheelCount) {
+      const bike = Object.create(vehicle);
+
+      bike.name = name;
+      bike.wheelCount = wheelCount;
+      bike.type = "Bike";
+
+      return bike;
+    }
+// ..........................................................................
+    // Example usage:
+    const myCar = makeCar("BMW", 4);
+    console.log(`Car Name: ${myCar.name},  Wheel Count: ${myCar.wheelCount},  Vehicle Type: ${myCar.type}`);
+
+    // Example usage:
+    const myBike = makeCar("Hornet", 2);
+    console.log(`Bike Name: ${myBike.name},  Wheel Count: ${myBike.wheelCount},  Vehicle Type: ${myBike.type}`);
+// ..........................................................................
+</script>
+</body>
+</html>
+
+<!-- Cars and Bikes
+easy
+Problem Statement
+You are given an object vehicle which contains some hidden members and methods.
+
+const vehicle = {
+
+    name: "",
+
+    type: "",
+
+    wheelCount: "",
+
+    // Some more members and methods
+
+    ...
+
+}
+
+
+
+Your task is to complete the two functions -
+1. makeCar() - It accepts two parameters name and wheelCount and returns an object with name, wheelCount, and type properties and inherits from the vehicle object. The type property must be set to "Car" (case-sensitive).
+
+2. makeBike() - It accepts two parameters name and wheelCount and returns an object with name, wheelCount and type properties and inherits from the vehicle object. The type property must be set to "Bike" (case-sensitive).
+
+Hint - Check __proto__
+Input
+1. The makeCar() function accepts two parameters - a string name and a number wheelCount of the car.
+
+2. The makeBike() function accepts two parameters - a string name and a number wheelCount of the bike.
+Output
+1. The makeCar() function returns a car object that inherit from the vehicle object.
+
+2. The makeBike() function returns a bike object that inherit from the vehicle object.
+Example
+Sample Input:
+// makeCar() method
+const name = "Nexon"
+const wheelCount = 4
+const myCar = makeCar(name, wheelCount)
+
+// if makeCar is implemented properly and has methods of vehicle
+// myCar object will have a method attached to it , which will print the string below on console
+// Car named 'Nexon' is running with 4 wheels!
+
+// makeBike() method
+const name = "Pulsar"
+const wheelCount = 2
+const myBike = makeBike(name, wheelCount)
+// if makeBike is implemented properly and has methods of vehicle
+// myBike object will have a method attached to it , which will print the string below on console
+// Bike named 'Pulsar' is running with 2 wheels!
+ -->
