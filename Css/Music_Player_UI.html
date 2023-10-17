@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ........................................................... -->
+<style>
+        /* Do not remove this code */
+
+.pause-btn::before {
+  content: "||";
+  color: #fff;
+}
+
+.prev-btn::before {
+  content: "<<";
+  color: #fff;
+}
+
+.next-btn::before {
+  content: ">>";
+  color: #fff;
+}
+/* ................s */
+
+.music-player{
+  display:flex;
+  align-items: center;
+  margin-top:20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 300px;
+  padding: 10px;
+  background-color: #c3eed0;
+  border-radius: 5px;
+}
+
+img{
+    height:80px;
+    width:80px;
+    border-radius: 50%;
+}
+.music-info{
+  display:1;
+  margin-left: 20px;
+}
+h2{
+  font-size:18px;
+  font:bold;
+  margin:0;
+}
+p{
+  font-size: 14px;
+  margin:0;
+}
+button{
+  /* flex-direction: column; */
+  height:30px;
+  width:30px;
+  margin:0 5px 0 5px;
+  background-color: rgb(75, 71, 71);
+  border:none;
+  border-radius:50%;
+  cursor:pointer;
+}
+.controls{
+    display:flex;
+}
+
+</style>
+<!-- ................................................... -->
+    <title>Document</title>
+</head>
+<body>
+    <div class="music-player">
+  <div class="album-cover">
+    <img src="https://d3dyfaf3iutrxo.cloudfront.net/general/upload/54b3234e4b7a4f288487d4680fd056be.webp" alt="Album Cover">
+  </div>
+  <div class="music-info">
+    <h2 class="song-title">Song Title</h2>
+    <p class="artist">Artist Name</p>
+  </div>
+  <div class="controls">
+    <button class="prev-btn"></button>
+    <button class="pause-btn"></button>
+    <button class="next-btn"></button>
+  </div>
+</div>
+</body>
+</html>

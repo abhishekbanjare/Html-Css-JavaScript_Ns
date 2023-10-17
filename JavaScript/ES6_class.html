@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Class</title>
+</head>
+<body>
+    <script>
+        //Write your code here
+class API{
+  #secure
+   constructor(url, method = 'GET'){
+     this.url = url;
+     this.method = method;
+     this.#secure = url.startsWith('https');
+   }
+  isSecure() {
+    return this.#secure;
+  }
+
+  updateUrl(newUrl) {
+    this.url = newUrl;
+    this.#secure = newUrl.startsWith('https');
+  }
+}
+// ..........................................
+const s = new API('http://api.com/api/hello');
+console.log(s.isSecure()); // false
+
+s.updateUrl('https://api.com/api/hello');
+console.log(s.isSecure()); // true
+
+console.log(s.url); // https://api.com/api/hello
+console.log(s.method); // GET
+
+
+
+
+//Do not remove this code
+module.exports = { API }
+    </script>
+</body>
+</html>
+<!-- 
+    ES6 Class
+
+In this question, we will be creating a class API using ES6 class syntax.
+
+The class will have 2 public fields, url, and method. The constructor method will take the URL as a parameter but the method argument is default to 'GET'.
+
+Also, the class object will have one private field (use #syntax) secure which will be set on initialization to true if the URL starts with https else will be set to false.
+
+The class will have two public methods, isSecure which returns the object's #secure properties' value, and a updateURL method which updates the URL and also updates the #secure field accordingly.
+
+Example:-
+const s = new API('http://api.com/api/hello')
+console. log(s.isSecure()) // false
+
+s.updateUrl('https://api. com/api/hello')
+console. log(s.isSecure()) // true
+
+console.log(s.url) // https://api. com/api/hello
+
+console.log(s.method) // GET
+
+ -->

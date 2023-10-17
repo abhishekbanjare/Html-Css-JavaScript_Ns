@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function promiseMe(time, data) {
+    // return the output using return keyword
+    // do not console.log it
+     return new Promise((resolve) => {
+       setTimeout(() => {
+           resolve(data);
+       }, time);
+    });
+
+}
+</script>
+</body>
+</html>
+<!-- 
+    JS Promise me - 1
+easy
+Problem Statement
+Complete the function promiseMe
+Such that it takes a number as the first argument (time) and a string as the second argument(data).
+It returns a promise which resolves after time milliseconds and data is returned.
+
+Note:- You only have to implement the function, in the example it
+shows your implemented question will be run.
+Input
+Function should take number as first argument and data to be returned as second.
+Output
+Resolves to the data given as input
+
+Example
+promiseMe(200, 'hi').then(data=>{
+console.log(data) // prints hi
+})
+ -->
